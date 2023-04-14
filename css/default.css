@@ -1,14 +1,14 @@
-/* ------------------- Lato -------------------- */
+/* ------------------- Avenir -------------------- */
 @font-face {
-  font-family: "Lato-Light";
-  src: url("../fonts/Lato-Light.woff2") format("woff2"), url("../fonts/Lato-Light.woff") format("woff");
+  font-family: "Avenir";
+  src: url("../fonts/Avenir-Light.woff2") format("woff2"), url("../fonts/Avenir-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Lato-Regular";
-  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
+  font-family: "Avenir";
+  src: url("../fonts/Avenir-Regular.woff2") format("woff2"), url("../fonts/Avenir-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -33,10 +33,7 @@ html {
 }
 
 body {
-  background: #00091e url("https://mayagemstones.ru/img/gallery/058456257fdc03021b73eacd968d9024.jpg") no-repeat top;
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: Lato-Light, "Times New Roman";
+  font-family: "Avenir", sans-serif;
   font-size: 16px;
   position: relative;
   line-height: normal;
@@ -44,6 +41,9 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+}
+body.lock-scroll {
+  overflow: hidden;
 }
 
 .list-reset {
@@ -101,65 +101,31 @@ img {
   vertical-align: middle;
 }
 
-.header {
-  z-index: 200;
+.container {
   width: 100%;
-  position: fixed;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 80px;
-  padding-right: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 0px;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
-@media (max-width: 480px) {
-  .header {
-    width: calc(100% - 60px);
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 30px;
-    padding-right: 30px;
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 10px;
   }
 }
 
-.header .white {
-  padding: 55px 0;
+.header {
+  height: 36px;
+  background-color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.header:not(.white) {
-  border-bottom: 1px solid #eeeeee;
-  background-color: #ffffff;
-}
-
-.btn {
-  width: 11.55vw;
-  line-height: 3.22vw;
-  font-size: 0.82vw;
-  display: inline-block;
-  background-color: #111111;
-  text-align: center;
-  color: #ffffff;
-  font-family: Lato-Regular;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border: 1px solid #111111;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.btn:hover {
-  background-color: #ffffff;
-  color: #111111;
+.reset-btn {
+  background: none;
+  border: none;
+  outline: none;
 }
