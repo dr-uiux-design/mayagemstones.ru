@@ -1,0 +1,320 @@
+/* ------------------- Country Select -------------------- */
+$Lato-300: "Lato-Light", "Times New Roman", sans-serif;
+$Lato-400: "Lato-Regular", "Times New Roman", sans-serif;
+
+//  Див в header, в котором будет отображаться выбранная страна
+.country-selected {
+  cursor: pointer;
+  display: inline-block;
+  font-family: $Lato-300;
+  letter-spacing: 1.44px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1.44px;
+  color: #fff;
+  text-transform: uppercase;
+
+  &__text {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      bottom: -7px;
+      left: 0px;
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover::after {
+      width: 0;
+    }
+  }
+}
+
+// Если белый header
+.header:not(.white) {
+  .country-selected {
+    color: #111;
+    font-family: $Lato-400;
+  }
+
+  .country-selected__text::after {
+    background-color: #111;
+  }
+}
+
+// Общие стили для попапов
+.country-popap {
+  width: 100%;
+  max-width: 336px;
+  background-color: #fff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+  color: #111;
+  font-family: $Lato-300;
+  font-size: 1vw;
+  line-height: 1.64vw;
+  letter-spacing: 0.06em;
+  padding: 30px 40px;
+  position: absolute;
+  top: 60px;
+  right: auto;
+  transform: translateY(-30px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+  z-index: -1000;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+    z-index: 10;
+  }
+
+  .btn {
+    width: 100%;
+    height: 47px;
+    font-family: $Lato-400;
+    font-size: 12px;
+  }
+
+  .btn-stroke {
+    color: #111;
+    background-color: #fff;
+    border: 1px solid #111;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: #111;
+      opacity: 0.9;
+    }
+  }
+}
+
+// Определения страны попап
+.country-detected {
+  .btn {
+    max-width: 100%;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__city {
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    color: #111111;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+// Поиск страны попап
+.country-choose {
+  padding: 0;
+
+  &__head {
+    padding: 20px 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  &__body {
+    padding: 20px 0;
+    padding-top: 10px;
+  }
+
+  &__footer {
+    padding: 0 40px;
+    padding-bottom: 20px;
+  }
+}
+
+// Поиск страны
+.search-country {
+  position: relative;
+
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    font-family: $Lato-300;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 5px;
+    letter-spacing: 1.44px;
+    color: #111;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+    padding-right: 10px;
+    transition: border 0.2s ease-in-out;
+
+    &::placeholder {
+      color: rgba(#000, 0.8);
+    }
+
+    &:focus {
+      border-bottom: 1px solid #111;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #111;
+    font-family: $Lato-300;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}
+
+.search-country__input:focus + .search-country__label,
+.search-country__input:not(:placeholder-shown) + .search-country__label {
+  top: 0;
+  font-family: $Lato-400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #111;
+}
+
+// Список стран
+.country-list {
+  list-style: none;
+  width: 100%;
+  max-height: 280px;
+  background-color: #fff;
+  overflow-y: auto;
+  font-family: $Lato-300;
+  font-size: 16px;
+  line-height: 24px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: #f4f4f4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #111;
+    border-radius: 0;
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 40px;
+
+    &:hover {
+      color: #fff;
+      background-color: #111;
+    }
+
+    a {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      color: inherit;
+      text-decoration: none !important;
+    }
+  }
+}
+
+// Адаптация
+@media (max-width: 480px) {
+  // Popap определения страны
+  .country-detected {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: inherit;
+    top: inherit;
+    padding: 20px;
+    transform: translateY(30px);
+
+    &__btns .btn {
+      max-width: 100%;
+    }
+  }
+
+  // Popap выбора страны
+  .country-choose {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    margin: inherit;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-100%);
+
+    &.is-active {
+      transform: translateX(0);
+    }
+
+    &__list {
+      max-height: 400px;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: calc(100% - (40px * 2));
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      margin: 0 auto;
+    }
+  }
+
+  .country-choose__close {
+    display: block;
+  }
+
+  .search-country__input {
+    font-size: 16px;
+  }
+}

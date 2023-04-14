@@ -1,0 +1,165 @@
+/* ------------------- Lato -------------------- */
+@font-face {
+  font-family: "Lato-Light";
+  src: url("../fonts/Lato-Light.woff2") format("woff2"), url("../fonts/Lato-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::before,
+::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100%;
+}
+
+body {
+  background: #00091e url("https://mayagemstones.ru/img/gallery/058456257fdc03021b73eacd968d9024.jpg") no-repeat top;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Lato-Light, "Times New Roman";
+  font-size: 16px;
+  position: relative;
+  line-height: normal;
+  min-width: 320px;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-reset {
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+}
+.input-reset::-webkit-search-decoration, .input-reset::-webkit-search-cancel-button, .input-reset::-webkit-search-results-button, .input-reset::-webkit-search-results-decoration {
+  display: none;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+  margin: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+
+.header {
+  z-index: 200;
+  width: 100%;
+  position: fixed;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+@media (max-width: 480px) {
+  .header {
+    width: calc(100% - 60px);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.header .white {
+  padding: 55px 0;
+}
+
+.header:not(.white) {
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+.btn {
+  width: 11.55vw;
+  line-height: 3.22vw;
+  font-size: 0.82vw;
+  display: inline-block;
+  background-color: #111111;
+  text-align: center;
+  color: #ffffff;
+  font-family: Lato-Regular;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid #111111;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #111111;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Country Select</title>
+
+	<!-- стандартные стили взяты с сайта их подключать не нужно-->
+	<link rel="stylesheet" href="./css/default.css">
+
+	<!-- Select Country -->
+	<link rel="stylesheet" href="./css/country-select.css">
+
+</head>
+
+<body>
+	<header class="header white">
+		<div class="container">
+
+			<!-- Отображение страны в header -->
+			<div class="country-selected" id="country-header">
+				<span class="country-selected__text" id="country-selected">Россия</span>
+			</div>
+
+			<!-- Select Country -->
+			<!-- Dropdown определения страны -->
+			<div class="country-popap country-detected" id="country-detected">
+				<div class="country-detected__text">
+					<p class="country-detected__title">Ваша страна</p>
+					<p class="country-detected__city" id="country-headerOut">Россия<span>?</span></p>
+				</div>
+				<div class="country-detected__btns">
+					<button class="btn" id="country-yes">Да</button>
+					<button class="btn btn-stroke" id="country-no">Нет</button>
+				</div>
+			</div>
+
+			<!-- Dropdown со списком стран -->
+			<div class="country-popap country-choose" id="country-choose">
+				<div class="country-choose__head">
+					<div class="country-choose__search search-country">
+						<input type="text" class="search-country__input" id="countrySearch" placeholder=" " autocomplete="off">
+						<label class="search-country__label">Serch your country</label>
+					</div>
+				</div>
+				<div class="country-choose__body">
+					<ul class="country-choose__list country-list">
+						<li class="country-list__item" data-lang="ru">Россия</li>
+						<li class="country-list__item" data-lang="ar">United Arab Emirates</li>
+						<li class="country-list__item" data-lang="en">Saudi Arabia</li>
+						<li class="country-list__item" data-lang="en">United States</li>
+						<li class="country-list__item" data-lang="en">United Kingdom</li>
+						<li class="country-list__item" data-lang="de">Germany</li>
+						<li class="country-list__item" data-lang="en">Australia</li>
+						<li class="country-list__item" data-lang="he">Israel</li>
+						<li class="country-list__item" data-lang="fr">France</li>
+						<li class="country-list__item" data-lang="ar">United Arab Emirates</li>
+						<li class="country-list__item" data-lang="en">Saudi Arabia</li>
+						<li class="country-list__item" data-lang="en">United States</li>
+						<li class="country-list__item" data-lang="en">United Kingdom</li>
+						<li class="country-list__item" data-lang="de">Germany</li>
+						<li class="country-list__item" data-lang="en">Australia</li>
+						<li class="country-list__item" data-lang="he">Israel</li>
+						<li class="country-list__item" data-lang="fr">France</li>
+					</ul>
+				</div>
+				<div class="country-choose__footer">
+					<button class="btn btn-stroke close-dropdown">Close</button>
+				</div>
+
+			</div>
+			<!-- / Select Country -->
+
+		</div>
+	</header>
+
+	<script defer src="./js/country-select.js"></script>
+
+</body>
+
+</html>
